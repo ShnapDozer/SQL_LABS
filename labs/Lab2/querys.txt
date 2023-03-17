@@ -1,0 +1,36 @@
+create table Person
+(
+	Id SERIAL PRIMARY KEY,
+	Name VARCHAR(50) NOT NULL,
+	LastName VARCHAR(50) NOT NULL,
+	PhoneNumber VARCHAR(50) NOT NULL,
+	City VARCHAR(50) NOT NULL
+)
+
+create table Request
+(
+	Id SERIAL PRIMARY KEY,
+	PersonId int REFERENCES public.person (id),
+	Song VARCHAR(50) NOT NULL,
+	Message TEXT,
+	Time TIMESTAMP NOT NULL
+)
+
+CREATE INDEX Fio_Index ON public.person (name, lastname) // Создаем индекс по имени и фамилии, те сортируем по данным полям, для более быстрого доступа к информации
+
+INSERT INTO Person (Name, LastName, PhoneNumber, City)
+VALUES
+('John', 'Smith', '123-456-7890', 'New York'),
+('Jane', 'Doe', '234-567-8901', 'Los Angeles'),
+('James', 'Johnson', '345-678-9012', 'Chicago'),
+('Amy', 'Williams', '456-789-0123', 'Houston'),
+('Michael', 'Brown', '567-890-1234', 'Philadelphia');
+
+INSERT INTO Request (PersonId, Song, Message, Time)
+VALUES
+(1, 'Shape of You', 'Hay', NOW()),
+(2, 'Havana', '', NOW()),
+(3, 'Perfect', 'Message', NOW()),
+(4, 'Despacito', '', NOW()),
+(5, 'Rockstar', 'for me', NOW());
+

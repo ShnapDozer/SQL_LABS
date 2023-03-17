@@ -3,8 +3,8 @@ services:
   postgres:
     image: postgres:latest
     environment:
-      POSTGRES_DB: "U8201525"
+      POSTGRES_DB: "ReWood"
       POSTGRES_USER: "admin"
-      POSTGRES_PASSWORD: "1488228"
+      POSTGRES_PASSWORD: "132435wer"
     ports:
       - "5432:5432"
