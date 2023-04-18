@@ -1,0 +1,7 @@
+<!DOCTYPE RCC>
+
+<RCC>
+    <qresource prefix="/">
+        <file>cfg/application.cfg</file>
+    </qresource>
+</RCC>

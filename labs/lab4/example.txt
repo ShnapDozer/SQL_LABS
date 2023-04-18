@@ -1,0 +1,3 @@
+SELECT person.name, request.song FROM person 
+INNER JOIN request
+	ON person.id = request.personid 
