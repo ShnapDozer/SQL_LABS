@@ -6,5 +6,6 @@ services:
       POSTGRES_DB: "ReWood"
       POSTGRES_USER: "admin"
       POSTGRES_PASSWORD: "132435wer"
+      POSTGRES_SSLMODE: "disable"
     ports:
       - "5432:5432"
